@@ -26,6 +26,6 @@ This project aims to develop database maintenance software for small businesses.
  ## AIM 
  * Create a project based on Python/SQL 
  * Integration of backend/frontend development
- * Workflow through CI/CD (github action).b
+ * Workflow through CI/CD (github action).
  * Maintain the project update in Github.
  
