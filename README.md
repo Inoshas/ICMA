@@ -24,8 +24,8 @@ This project aims to develop database maintenance software for small businesses.
     * Security??? 
 
  ## AIM 
- * Learn Python/SQL 
- * Learn integration ( backend/frontend)
- * Publish a complete project in GitHib
- * Learn CI/CD through github action. 
+ * Create a project based on Python/SQL 
+ * Integration of backend/frontend development
+ * Workflow through CI/CD (github action).b
+ * Maintain the project update in Github.
  
