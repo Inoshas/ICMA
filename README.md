@@ -29,3 +29,5 @@ This project aims to develop database maintenance software for small businesses.
  * Workflow through CI/CD (github action).
  * Maintain the project update in Github.
  
+ 
+ ## Time frame and contributions: 
