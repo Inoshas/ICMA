@@ -31,3 +31,5 @@ This project aims to develop database maintenance software for small businesses.
  
  
  ### Time frame and contributions: Will be Added
+ 
+ ## Data analysis
