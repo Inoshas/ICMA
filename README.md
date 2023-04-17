@@ -4,10 +4,11 @@ This project aims to develop database maintenance software for small businesses.
 
 ## Requirements:
 * ### Data base:
-  The main database (db) contain few tables.  Each table has a link with a distinctive id, such as "product _id." 
-
+  We maintain mainly two databases (db) with few tables. Each table in db may have a link with a distinctive ids, such as "product _id." 
+  #### Inventory and unit price
     * Inventory: Contains product details and available quantities- product ids, sizes, quantities of each size, colors, etc.
     * Unit price: Unit price details- Taking into account the VAT, import/export tax, shipping cost, purchase price, other expenses, etc., this will determine the marginal selling price for the products. 
+   #### Other expenses and account data
     * Expenses: This will keep the additional charges and capital costs on an annual basis.
     * Account management: This will keep track of each product's loss and profit. a year-end summary (if necessary)
 
