@@ -33,4 +33,4 @@ This project aims to develop database maintenance software for small businesses.
  
  ### Time frame and contributions: will be added
  
- ## Proress: will be added 
+ ### Progress: will be added 
