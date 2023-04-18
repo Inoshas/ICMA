@@ -1,5 +1,5 @@
-# Python Group Project
-This project aims to develop database maintenance software for small businesses. Self-employed business entrepreneurs frequently struggle to come up with the cash needed for expenses such as inventory management, tax preparation, and bookkeeping. We want to develop a clear reporting and managing software/system that is simple to use. 
+# Inverntory and cost management application
+This project aims to develop webapplication/software for small businesses. Self-employed business entrepreneurs frequently struggle to come up with the cash needed for expenses such as inventory management, tax preparation, and bookkeeping. We want to develop a clear reporting and managing software/system that is simple to use. 
 
 
 ## Requirements:
@@ -19,6 +19,7 @@ This project aims to develop database maintenance software for small businesses.
     * Create bill/ invoice
 
 * ### Backend:
+    * Use flask to develop
     * Process data and provide necessary report
     * Reject if the file is not in correct format( with instruction)
     * Update database accordingly - remove after sales/ add after buy.??
