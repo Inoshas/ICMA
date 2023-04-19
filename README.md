@@ -35,4 +35,4 @@ This project aims to develop webapplication/software for small businesses. Self-
  
  ### Time frame and contributions: will be added.
  
- ### Progress: will be added. 
+ ### Progress: will be added soon.  
