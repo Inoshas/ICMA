@@ -22,6 +22,18 @@ CREATE TABLE IF NOT EXISTS local_transport (
 """)
 
 
+cur.execute("""
+CREATE TABLE IF NOT EXISTS phonebills (
+    id INTEGER PRIMARY KEY,
+    year INTEGER NOT NULL,
+    month INTEGER NOT NULL,
+    date INTEGER NOT NULL,
+    invoice_value REAL NOT NULL,
+    VAT_presentage REAL NOT NULL
+)
+""")
+
+
 #### Insert colums if something missing: 
 ''' 
 cur.execute(""" ALTER TABLE local_transport
@@ -29,6 +41,7 @@ cur.execute(""" ALTER TABLE local_transport
 '''
 
 def insert_values():
+    data_input=input("what data you want to add (Phone bills(P), )")
     db = sqlite3.connect('expenses_account.db')
     cur = db.cursor()
     data= input("Add  year, month, date, location, distance_km, price_per_km, total_price_euro in correct order and seperate with ',' : ")
