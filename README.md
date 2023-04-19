@@ -33,6 +33,6 @@ This project aims to develop webapplication/software for small businesses. Self-
  * Maintain the project update in Github.
  
  
- ### Time frame and contributions: will be added
+ ### Time frame and contributions: will be added.
  
- ### Progress: will be added 
+ ### Progress: will be added. 
