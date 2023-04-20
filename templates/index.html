@@ -13,10 +13,17 @@
         <h1 >Small businesses Inventory and Account Management</h1>
     </header>
     <main>
+        <form action="/forward/" method="post">
+            <button name="forwardBtn" type="submit">Forward</button>
+          </form>
+
+          <input type="submit" name="submit_button" value="Do Something">
+        <input type="submit" name="submit_button" value="Do Something Else">
+
         <form action="/test" method="post">
             <h2>Enter data</h2> 
             <h4 style="color:blue"> Type of data</h4>
-                <button type="submit"> Inventory Data  </button>
+                <button action="/button" type="submit" id="inventory_data" name="inventory_data" required> Inventory Data  </button>
                 <button type="submit"> Sales  </button>
                 <button type="submit"> Expenses  </button>
                 <h4 style="color:blue"> Method to enter data</h4>
@@ -28,7 +35,7 @@
                 <button type="submit"> Expenses  </button>
                 <button type="submit"> Accounts </button>
         </form>
-    {{ result }}
+    {{ forward_message }}
 
 
     
