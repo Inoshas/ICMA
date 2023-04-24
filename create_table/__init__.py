@@ -21,7 +21,7 @@ class cre_tab:
         self.db.commit()
 
 
-# identify DB based on the requirement 
+    # identify DB based on the requirement 
     # add values to table based on the table name and method    
     def add_table_val(self, adding_method, table_name, file_name,list_data):
         if adding_method =="file":
