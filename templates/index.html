@@ -15,12 +15,21 @@
     </header>
   
     <main>
-  
+        <h2> Do you interest to generate reports, bills  or invoices?</h2> 
+        <form name="sele_fun" action="/select_fun/" method="post" onsubmit="">
+            <p>
+                <input type="radio" name="sel_f" id="option1" value="option1"> Generate report </input><br>
+                <input type="radio" name="sel_f" id="option2" value="option2"> Generate bill/invoice </input><br>     
+            </p>
+            <p><input type=submit value=Next></p>
+        </form>
+
+
         <h2>Are you updating expenses database or products database?</h2> 
         <form name="form_DB" action="/DB_select" method="post" onsubmit="">
             <p>
-                <input type="radio" name="db_type" id="option1" value="Expenses"> Expenses </input><br>
-                <input type="radio" name="db_type" id="option2" value="products"> Products </input><br>
+                <input type="radio" name="db_type" id="option1" value="option1"> Expenses </input><br>
+                <input type="radio" name="db_type" id="option2" value="option2"> Products </input><br>
             </p>
             <p><input type=submit value=Next></p>
         </form>
@@ -31,14 +40,7 @@
         
 
 
-        <h2>What table you want to update?</h2> 
-        <form name="form_table" action="/table_names" method="post" onsubmit="">
-            <p>
-                <input type="radio" name="table_n" id="option1" value="phone bills"> Phone Bills </input><br>
-                <input type="radio" name="table_n" id="option2" value="transport"> Transport </input><br>
-            </p>
-            <p><input type=submit value=Next></p>
-        </form>
+     
 
         <div style="color: red">
             <p> {{ second }} </p>
@@ -92,7 +94,7 @@
 
       -->
 
-    {{ second }}
+
 
 
     </main>

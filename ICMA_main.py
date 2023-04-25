@@ -6,6 +6,7 @@ type = ""
 adding_method =""
 table_name =""
 data_input=""
+func1=""
 
 file_name="phone_bills.csv"#input('file_name?')
 list_data=['2005', '5', '6', 'gtsss00222', '24']#input('list_data?')
@@ -17,11 +18,25 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/select_fun/", methods=["POST"])
+def select_func(): 
+    global func1
+    func1 = (request.form.getlist('sel_f'))[0]
+    return render_template("index.html", first=f"You are generating reports")
+
 @app.route("/DB_select/", methods=["POST"])
 def select_db(): 
     global type
     type = (request.form.getlist('db_type'))[0]
+    if func1== "option1":
+        return render_template('expenses.html')
+    elif func1== "option2":
+        return render_template('products.html')
+
+   
     return render_template("index.html", first=f"You are going to update your {type} DB")
+
+
 
 @app.route("/table_names/", methods=["POST"])
 def select_table():
@@ -36,11 +51,13 @@ def select_method():
     adding_method= (request.form.getlist('adding_methods'))[0]
     return   render_template("index.html", third=f"Now ready to update {table_name} table in your {type} DB. Add data {adding_method}")
 
+@app.route("/enter_Data/", methods=["POST"])
 def enter_values():
     global type
     global table_name
     global adding_method
     global data_input
+    company_name = request.form['company_name']
 
 
 """ 
