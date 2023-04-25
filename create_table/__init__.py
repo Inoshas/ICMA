@@ -35,12 +35,14 @@ class cre_tab:
             reader = csv.reader(csv_file, delimiter=';')
             next(reader) 
             for row in reader: 
-                list_data=row[0]
+                list_data=row[0].split(",")
+                print(list_data)
                 self.add_data(table_name,list_data)
            
         
     def add_data(self, table_name,list_data):
       ## This will define which data to which table and how.....   
+        print(table_name)
         if table_name== "phone_bills":
             insert_sql=f""" INSERT INTO phonebills (year, month, date, invoice_value, VAT_presentage) VALUES (?,?,?,?,?)"""
             self.cur.execute(insert_sql, (list_data[0],list_data[1],list_data[2],list_data[3],list_data[4] ))

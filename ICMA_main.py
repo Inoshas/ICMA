@@ -1,14 +1,49 @@
-#from flask import Flask,render_template, request
+from flask import Flask,render_template, request
 import create_table
 ##import sqlite3
 
-type=input('what db you want to connect?')
-adding_method=input('adding_method')
-table_name=input('table_name?')
-file_name=input('file_name?')
-list_data=input('list_data?')
+type = ""
+adding_method =""
+table_name =""
+data_input=""
+
+file_name="phone_bills.csv"#input('file_name?')
+list_data=['2005', '5', '6', 'gtsss00222', '24']#input('list_data?')
+
+app = Flask(__name__)
 
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/DB_select/", methods=["POST"])
+def select_db(): 
+    global type
+    type = (request.form.getlist('db_type'))[0]
+    return render_template("index.html", first=f"You are going to update your {type} DB")
+
+@app.route("/table_names/", methods=["POST"])
+def select_table():
+    global type
+    global table_name  
+    table_name = (request.form.getlist('table_n'))[0]
+    return  render_template("index.html", second=f"You are going to update {type} database {table_name} table")
+
+@app.route("/method/", methods=["POST"])
+def select_method():
+    global adding_method  
+    adding_method= (request.form.getlist('adding_methods'))[0]
+    return   render_template("index.html", third=f"Now ready to update {table_name} table in your {type} DB. Add data {adding_method}")
+
+def enter_values():
+    global type
+    global table_name
+    global adding_method
+    global data_input
+
+
+""" 
 def identify_DB(type,adding_method, table_name, file_name,list_data):
     if type== "products":
         connec_db = create_table.cre_tab('Inventory_and_price.db')
@@ -19,11 +54,14 @@ def identify_DB(type,adding_method, table_name, file_name,list_data):
     elif type=="expenses":
         print(type)
         connec_db = create_table.cre_tab('expenses_account.db')
+        connec_db.add_table_val(adding_method, table_name, file_name,list_data)
         return type
-
+"""
 
 print('start here')
-print(identify_DB(type))
+#print(identify_DB(type,adding_method, table_name, file_name,list_data))
+
+
 
 
 """ 
@@ -69,24 +107,13 @@ print("done")
 
 
 
-''' 
 
-app = Flask(__name__)
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/forward/", methods=["POST"])
-def move_forward():
-    forward_message = "Moving Forward..."
-    return render_template("index.html", forward_message=forward_message)
 
 
 
 if __name__=="__main__":
     app.run(debug=True)
+    #(identify_DB(type,adding_method, table_name, file_name,list_data))
     
-'''
+    
+    
