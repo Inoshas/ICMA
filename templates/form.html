@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Businesses Invernory and Account Management</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1 style="center ; color: blue">Small businesses Inventory and Account Management</h1>
+    </header>
+  
+    <main>
+
+        <form method="POST" action="{{ url_for('my_route') }}">
+            <label for="option1">Option 1:</label>
+            <select name="option1" id="option1">
+                <option value="option1_value1">Option 1 Value 1</option>
+                <option value="option1_value2">Option 1 Value 2</option>
+                <option value="option1_value3">Option 1 Value 3</option>
+            </select>
+            <br>
+            <label for="option2">Option 2:</label>
+            <select name="option2" id="option2">
+                <option value="option2_value1">Option 2 Value 1</option>
+                <option value="option2_value2">Option 2 Value 2</option>
+                <option value="option2_value3">Option 2 Value 3</option>
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+
+
+
+    </main>
+
+</body>
+
+</html>
