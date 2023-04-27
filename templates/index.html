@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Businesses Invernory and Account Management</title>
+    <title>Small Business's Inventory and Account Management</title>
 </head>
 
 <body>
@@ -15,88 +15,24 @@
     </header>
   
     <main>
-        <h2> Do you interest to generate reports, bills  or invoices?</h2> 
+        <h2> Generate</h2> 
         <form name="sele_fun" action="/select_fun/" method="post" onsubmit="">
             <p>
-                <input type="radio" name="sel_f" id="option1" value="option1"> Generate report </input><br>
-                <input type="radio" name="sel_f" id="option2" value="option2"> Generate bill/invoice </input><br>     
+                <input type="radio" name="sel_f" id="option1" value="option1"> Reports </input><br>
+                <input type="radio" name="sel_f" id="option2" value="option2"> Bill/invoice </input><br>     
             </p>
             <p><input type=submit value=Next></p>
         </form>
 
 
-        <h2>Are you updating expenses database or products database?</h2> 
-        <form name="form_DB" action="/DB_select" method="post" onsubmit="">
+        <h2>Update</h2> 
+        <form name="form_DB" action="/DB_select/" method="post" onsubmit="">
             <p>
-                <input type="radio" name="db_type" id="option1" value="option1"> Expenses </input><br>
-                <input type="radio" name="db_type" id="option2" value="option2"> Products </input><br>
+                <input type="radio" name="db_type" id="option1" value="expenses"> Expenses Database</input><br>
+                <input type="radio" name="db_type" id="option2" value="products"> Products Database </input><br>
             </p>
             <p><input type=submit value=Next></p>
         </form>
-
-        <div style="color: red">
-            <p> {{ first }} </p>
-        </div>
-        
-
-
-     
-
-        <div style="color: red">
-            <p> {{ second }} </p>
-        </div>
-        <h2>Are you updating manually or using csv file?</h2> 
-        <form name="form_method" action="/method" method="post" onsubmit="">
-            <p>
-                <input type="radio" name="adding_methods" id="option1" value="file"> CSV file </input><br>
-                <input type="radio" name="adding_methods" id="option2" value="manually"> Manually </input><br>
-            </p>
-            <p><input type=submit value=Next></p>
-        </form>
-
-        <div style="color: red">
-            <p> {{ third}} </p>
-        </div>
-
-        <form action="/enter_Data" method="post">
-            <input type="text" id="data_input" name="data_input" required>
-            <button type="submit">Submit</button>
-        </form>
-
-
-
-
-
-<!--
-        <form action="/forward/" method="post">
-            <button name="forwardBtn" type="submit">Forward</button>
-          </form>
-
-          <input type="submit" name="submit_button" value="Do Something">
-        <input type="submit" name="submit_button" value="Do Something Else">
-
-        <form action="/test" method="post">
-            <h2>Enter data</h2> 
-            <h4 style="color:blue"> Type of data</h4>
-                <button action="/button" type="submit" id="inventory_data" name="inventory_data" required> Inventory Data  </button>
-                <button type="submit"> Sales  </button>
-                <button type="submit"> Expenses  </button>
-                <h4 style="color:blue"> Method to enter data</h4>
-                    <button  type="submit"> Manually </button> 
-                    <button type="submit"> File  </button> 
-            <h2> Create report </h2>
-                <button type="submit"> Inventory </button>
-                <button type="submit"> Sales  </button>
-                <button type="submit"> Expenses  </button>
-                <button type="submit"> Accounts </button>
-        </form>
-
-
-      -->
-
-
-
-
     </main>
 
 </body>
