@@ -57,9 +57,27 @@ def step_4():
     database_type=request.form.getlist('db_type')[0]
     table_need = request.form.getlist('table_n')[0]
     method_data=request.form.getlist('sel_f')[0]
-   # data = read_table(database=database_type, table_name=table)
-    return render_template('method.html', db_type=database_type, table=table_need, method_d=method_data)
+   
+    if method_data== "manually":
+        enter_name= "Enter data in the correct order with ',' seperation"
+    elif method_data== "file" :
+        enter_name= "Enter csv file name "
+    
+    return render_template('data_enter.html',  ent_name=enter_name,  db_type=database_type, table=table_need, method_d=method_data)
 
+
+@app.route('/update_d/', methods=["POST"])
+def step_5():
+    database_type=request.form.getlist('db_type')[0]
+    table_need = request.form.getlist('table_n')[0]
+    method_data=request.form.getlist('method_d')[0]
+    data_ent=request.form.getlist('data_f')[0]
+    
+    return render_template('more_tasks.html',   db_type=database_type, table=table_need, method_d=method_data, data_set=data_ent)
+
+ 
+   # data = read_table(database=database_type, table_name=table)
+    
 
 if __name__=="__main__":
     app.run(debug=True)

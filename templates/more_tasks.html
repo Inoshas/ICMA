@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Businesses Invernory and Account Management</title>
+</head>
+
+<body>
+    <main>
+        <h2> xxxx </h2>
+    <form action="/update_d/" method="post">
+        <p>
+            We are ready to update  {{table}} table in {{db_type}} db using {{data_set}} data. 
+            <br>
+            Press Enter if the data is correct. Else press re-start to enter new data. 
+            <input type="text" name="data_f" id="option1" value="data_infor"> </input><br>
+        </p>
+        <input name="db_type" type="hidden" value={{db_type}}> 
+        <input name="table_n" type="hidden" value={{table}}></input><br>
+        <input name="method_d" type="hidden" value={{method_d}}></input><br>
+        <input name="method_d" type="hidden" value={{data_set}}></input><br>
+       
+        <input type="submit" id="Re-start" value="Restart"> </input><br> 
+        <input type="submit" id="Enter" value="Enter"></input><br> 
+    </form>
+
+
+        
+    <div style="color: red">
+        <p>  </p>
+    </div>
+    
+
+
+ 
+
+</main>
+
+</body>
+
+</html>
