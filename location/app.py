@@ -6,7 +6,7 @@ import googlemaps
 app = Flask(__name__)
 
 # Initialize the Google Maps API client
-gmaps = googlemaps.Client(key='AIzaSyAvHrKFbATTJDhRqGqQrlYnmHp__UoGNHY')
+gmaps = googlemaps.Client(key='API key')
 
 # Define a route to display the distance between two addresses
 @app.route('/')
