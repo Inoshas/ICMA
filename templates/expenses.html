@@ -10,15 +10,18 @@
 
 <body>
 
+    <header>
+        <h1 style="center ; color: blue">Small businesses Inventory and Account Management</h1>
+    </header>
 <h2> Data table</h2> 
 <form name="form_table" action="/table_names/" method="post" onsubmit="">
     <p>
         <input type="radio" name="table_n" id="option1" value="phone bills"> Phone Bills </input><br>
         <input type="radio" name="table_n" id="option2" value="transport"> Transport </input><br>
-        <input type="radio" name="table_n" id="option2" value="transport"> Capital cost </input><br>
+        <input type="radio" name="table_n" id="option3" value="capital_cost"> Capital cost </input><br>
+        <input type="radio" name="table_n" id="option4" value="import_cost"> Imported item cost</input><br>
     </p>
     <input name="db_type" type="hidden" value={{db_type}}>
-    {{db_type}}
     <p><input type=submit value=Next></p>
 </form>
 

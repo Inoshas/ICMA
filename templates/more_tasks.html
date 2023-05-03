@@ -10,32 +10,29 @@
 
 <body>
     <main>
-        <h2> xxxx </h2>
-    <form action="/update_d/" method="post">
+        <header>
+            <h1 style="center ; color: blue">Small businesses Inventory and Account Management</h1>
+        </header>
+      
+    <form action="/finalize_d/" method="post">
         <p>
             We are ready to update  {{table}} table in {{db_type}} db using {{data_set}} data. 
             <br>
             Press Enter if the data is correct. Else press re-start to enter new data. 
-            <input type="text" name="data_f" id="option1" value="data_infor"> </input><br>
+
         </p>
         <input name="db_type" type="hidden" value={{db_type}}> 
         <input name="table_n" type="hidden" value={{table}}></input><br>
         <input name="method_d" type="hidden" value={{method_d}}></input><br>
-        <input name="method_d" type="hidden" value={{data_set}}></input><br>
-       
-        <input type="submit" id="Re-start" value="Restart"> </input><br> 
-        <input type="submit" id="Enter" value="Enter"></input><br> 
+        <input name="data_ent" type="hidden" value={{data_f}}></input><br>
+
+        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+            <input type="submit" value="Restart" name="status_n" id="optionx"/>
+            <span id="spanStage"> </span>
+            <input type="submit" value="Enter" name="status_n" id="optiony"/>
+       </div>
     </form>
-
-
-        
-    <div style="color: red">
-        <p>  </p>
-    </div>
-    
-
-
- 
+        {{first}}
 
 </main>
 

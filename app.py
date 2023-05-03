@@ -2,11 +2,8 @@ from flask import Flask,render_template, request
 from modules import create_table
 import configparser
 
-""" 
-cfg = configparser.ConfigParser()
-cfg.read('config.ini')
-CONFIG = cfg.sections()
-"""
+
+
 my_db=""
 method_d=""
 adding_method =""
@@ -75,10 +72,26 @@ def step_5():
     
     return render_template('more_tasks.html',   db_type=database_type, table=table_need, method_d=method_data, data_set=data_ent)
 
- 
-   # data = read_table(database=database_type, table_name=table)
-    
 
+@app.route('/finalize_d/', methods=["POST"])
+def step_6():
+    confirm_status= request.form.getlist('status_n')[0]
+ 
+    if confirm_status== "Enter":
+        """
+        database_type=request.form.getlist('db_type')[0]
+        
+        table_need = request.form.getlist('table_n')[0]
+        method_data=request.form.getlist('method_d')[0]
+        data_ent=request.form.getlist('data_f')[0]
+        """
+        #db_type=database_type, table=table_need, method_d=method_data, data_set=data_ent)
+        return render_template('more_tasks.html', first= "Updating...")
+   
+    elif confirm_status== "Restart": 
+        return render_template('index.html')
+       
+   
+    
 if __name__=="__main__":
     app.run(debug=True)
-    #(identify_DB(type,adding_method, table_name, file_name,list_data))

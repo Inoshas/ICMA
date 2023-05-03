@@ -9,7 +9,11 @@
 </head>
 
 <body>
+    <header>
+        <h1 style="center ; color: blue">Small businesses Inventory and Account Management</h1>
+    </header>
     <main>
+   
         <h2> Update </h2>
     <form action="/method_t/" method="post">
         <p>
@@ -18,41 +22,18 @@
         </p>
     
         <input name="db_type" type="hidden" value={{db_type}}>
-    {{db_type}} {{table}}   
+  
         <input name="table_n" type="hidden" value={{table}}></input><br>
         <input type="submit" id="submit" value="Submit"></input><br> 
     </form>
 
 
-        
-    <div style="color: red">
-        <p> {{ first }} </p>
-    </div>
     
 
 
  
 
-    <div style="color: red">
-        <p> {{ second }} </p>
-    </div>
-    <h2>Are you updating manually or using csv file?</h2> 
-    <form name="form_method" action="/method" method="post" onsubmit="">
-        <p>
-            <input type="radio" name="adding_methods" id="option1" value="file"> CSV file </input><br>
-            <input type="radio" name="adding_methods" id="option2" value="manually"> Manually </input><br>
-        </p>
-        <p><input type=submit value=Next></p>
-    </form>
-
-    <div style="color: red">
-        <p> {{ third}} </p>
-    </div>
-
-    <form action="/enter_Data" method="post">
-        <input type="text" id="data_input" name="data_input" required>
-        <button type="submit">Submit</button>
-    </form>
+ 
 
 
 
