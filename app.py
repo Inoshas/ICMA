@@ -4,7 +4,7 @@ import configparser
 
 
 
-my_db=""
+database_type=""
 method_d=""
 adding_method =""
 table_name =""
@@ -70,7 +70,7 @@ def step_5():
     method_data=request.form.getlist('method_d')[0]
     data_ent=request.form.getlist('data_f')[0]
     
-    return render_template('more_tasks.html',   db_type=database_type, table=table_need, method_d=method_data, data_set=data_ent)
+    return render_template('more_tasks.html',   db_type=database_type, table=table_need, method_d=method_data, data_f=data_ent)
 
 
 @app.route('/finalize_d/', methods=["POST"])
@@ -78,15 +78,14 @@ def step_6():
     confirm_status= request.form.getlist('status_n')[0]
  
     if confirm_status== "Enter":
-        """
-        database_type=request.form.getlist('db_type')[0]
-        
+        database_type=request.form.getlist('db_type')[0] +".db"
         table_need = request.form.getlist('table_n')[0]
         method_data=request.form.getlist('method_d')[0]
         data_ent=request.form.getlist('data_f')[0]
-        """
+        connec_db = create_table.cre_tab(database_type)
+        connec_db.add_table_val(method_data, table_need, data_ent)
         #db_type=database_type, table=table_need, method_d=method_data, data_set=data_ent)
-        return render_template('more_tasks.html', first= "Updating...")
+        return render_template('more_tasks.html', first=  database_type)
    
     elif confirm_status== "Restart": 
         return render_template('index.html')

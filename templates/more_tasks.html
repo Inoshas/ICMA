@@ -16,7 +16,7 @@
       
     <form action="/finalize_d/" method="post">
         <p>
-            We are ready to update  {{table}} table in {{db_type}} db using {{data_set}} data. 
+            We are ready to update  {{table}} table in {{db_type}} db using {{data_f}} data. 
             <br>
             Press Enter if the data is correct. Else press re-start to enter new data. 
 
@@ -24,7 +24,7 @@
         <input name="db_type" type="hidden" value={{db_type}}> 
         <input name="table_n" type="hidden" value={{table}}></input><br>
         <input name="method_d" type="hidden" value={{method_d}}></input><br>
-        <input name="data_ent" type="hidden" value={{data_f}}></input><br>
+        <input name="data_f" type="hidden" value={{data_f}}></input><br>
 
         <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
             <input type="submit" value="Restart" name="status_n" id="optionx"/>
