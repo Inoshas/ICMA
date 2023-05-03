@@ -25,7 +25,6 @@ def read_table(database, table_name):
 def main_fun_html():
     return render_template('index.html')
 
-
 @app.route('/DB_select/', methods=["POST"])
 def step_2():
     database_type=request.form.getlist('db_type')[0]
