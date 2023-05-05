@@ -24,9 +24,11 @@ class cre_tab:
     # add values to table based on the table name and method    
     def add_table_val(self, adding_method, table_name, data_format):
         if adding_method =="file":
-            self.read_csvfile(table_name,data_format)
+            file_link=f"files/{data_format}"
+            self.read_csvfile(table_name,file_link)
         elif adding_method=="manually":
-            self.add_data(table_name,data_format)
+            array_data=(eval(data_format))
+            self.add_data(table_name,array_data)
                 
     
     def read_csvfile(self,table_name, data_format):
@@ -56,7 +58,6 @@ class cre_tab:
       ## This will define which data to which table and how.....   
         if table_name== "phonebills":
             insert_sql=f""" INSERT INTO phonebills (year, month, date, invoice_value, VAT_presentage) VALUES (?,?,?,?,?)"""
-            data_format1=data_format
             self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4] ))
          
           #  (list_data[0],list_data[1],list_data[2],list_data[3],list_data[4] )) """          
