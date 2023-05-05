@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS unitprice (
     prod_id TEXT NOT NULL, 
     unit_id TEXT NOT NULL,
     QR_code Text NOT NULL,
-    cost REAL NOT_NULL,
+    cost REAL NOT NULL,
     VAT_pres REAL NOT NULL,
     marginal_price REAL NOT NULL,
     selling_price_defined REAL NOT NULL,
@@ -41,6 +41,12 @@ CREATE TABLE IF NOT EXISTS unitprice (
     status TEXT NOT NULL
 )
 """)
+
+''' 
+### if you want to add more colums to table use this
+cur.execute(""" ALTER TABLE [Tabl_name]
+    ADD COLUMN [column_name] INTEGER """)
+'''
 
 db.commit()
 db.close()

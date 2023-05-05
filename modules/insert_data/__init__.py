@@ -42,29 +42,72 @@ class cre_tab:
            
         
     def add_data(self, table_name,data_format):
-        
-        
-        """def number_to_string(argument):
-    match argument:
-        case 0:
-            return "zero"
-        case 1:
-            return "one"
-        case 2:
-            return "two"
-        case default:
-            return "something"
-        """
-      ## This will define which data to which table and how.....   
+    
+        print(self.db_file)
+            # id , year, month, date,invoice_value,VAT_presentage,comment
         if table_name== "phonebills":
-            insert_sql=f""" INSERT INTO phonebills (year, month, date, invoice_value, VAT_presentage, comment) VALUES (?,?,?,?,?,?)"""
-            self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5]  ))
-         
-          #  (list_data[0],list_data[1],list_data[2],list_data[3],list_data[4] )) """          
+            print(table_name)
+            insert_sql=f""" INSERT INTO phonebills (year, month, date,invoice_value,VAT_presentage,comment) VALUES (?,?,?,?,?,?)"""
+            self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5]  ))    
+    
+        # id ,year ,month, date ,to_location ,from_location , turns , total_distance ,price_per_unit_dis, total_price
         elif table_name=="transport":
-            insert_sql=f"""INSERT INTO local_transport (year, month, date, location, distance_km, price_per_km, total_price_euro) VALUES (?,?,?,?,?,?,?) """
-            self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5], int(data_format[5])*int(data_format[4]) ))
+            insert_sql=f"""INSERT INTO transport (year ,month, date ,to_location ,from_location , turns , total_distance ,price_per_unit_dis, total_price) VALUES (?,?,?,?,?,?,?,?,?) """
+            self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5],
+                                        data_format[6],data_format[7],int(data_format[7])*int(data_format[6])*int(data_format[5]) ))
 
-        ##### Here need to add all files and its entities......
-        self.commit()
+        # id ,year,month ,date , item ,quantity ,invoice_value,VAT_presentage , payment_stage , comment  
+        elif table_name=="capitalcost":
+            insert_sql=f"""INSERT INTO capitalcost (year,month ,date , item ,quantity ,invoice_value,VAT_presentage , payment_stage , comment) VALUES (?,?,?,?,?,?,?,?,?) """
+            self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5],
+                                        data_format[6],data_format[7], data_format[8]))  
+        
+        # id , year , month , date , invoice_no , item ,   quantity , price_in_foreigncurency ,
+        # exchange_rate ,price_in_localcurency,  VAT_presentage,  shiping_cost ,
+        # shiping_invoice_number ,  custom_duty , custom_reference_number,  payment_date , comment 
+    
+        elif table_name=="importeditems":
+            insert_sql=f"""INSERT INTO importeditems 
+            (year , month , date , invoice_no , item ,   quantity , price_in_foreigncurency ,exchange_rate ,price_in_localcurency,  VAT_presentage,  shiping_cost ,shiping_invoice_number ,  custom_duty , custom_reference_number,  payment_date , comment )
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            """
+            self.cur.execute(insert_sql, 
+                            (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
+                            data_format[5],data_format[6],data_format[7], data_format[8], data_format[9],
+                            data_format[10],data_format[11],data_format[12],data_format[13], data_format[14] ,data_format[15]))
+        self.commit()   
+            
+    
+        if table_name=="inventory":
+            insert_sql=f"""INSERT INTO inventory 
+            (category, prod_id,  name , size,  color,  quantity,  damage_quantity , instock_quantity , sales_quantity )
+            VALUES (?,?,?,?,?,?,?,?,?)
+            """
+            self.cur.execute(insert_sql, 
+                            (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
+                            data_format[5],data_format[6],data_format[7], data_format[8]))
+        
+        
+        #    id ,prod_id ,  unit_id ,QR_code ,cost ,VAT_pres ,marginal_price ,selling_price_defined ,actual_selling_price , status 
+        
+        elif table_name=="unitprice":
+            print(table_name)
+            insert_sql=f"""INSERT INTO unitprice
+            (prod_id, unit_id,
+            QR_code,cost,VAT_pres ,marginal_price,
+            selling_price_defined ,actual_selling_price , status )
+            VALUES (?,?,?,?,?,?,?,?,?)
+            """
+            self.cur.execute(insert_sql, 
+                            (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
+                            data_format[5],data_format[6],data_format[7], data_format[8]))
+        
+        self.commit()   
+            
+
+   # id ,category, prod_id,  name , size,  color,  quantity,  damage_quantity , instock_quantity , sales_quantity ,
+
+
+        
+          
         

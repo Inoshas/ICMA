@@ -69,7 +69,7 @@ def step_6():
         method_data=request.form.getlist('method_d')[0]
         data_ent=request.form.getlist('data_f')[0]
         database_type=f"db/{database_type}";
-        connec_db = create_table.cre_tab(database_type)
+        connec_db = insert_data.cre_tab(database_type)
         connec_db.add_table_val(method_data, table_need, data_ent)
         return render_template('more_tasks.html', first=  database_type)
     
