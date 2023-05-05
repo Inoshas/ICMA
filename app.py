@@ -1,6 +1,6 @@
 from flask import Flask,render_template, request
-from modules import create_table
-import numpy as np
+from modules import insert_data
+
 
 database_type=""
 method_d=""

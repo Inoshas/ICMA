@@ -1,48 +1,13 @@
-import sqlite3
-import csv
 
-#import openpyxl
-
-
-db = sqlite3.connect('expenses_account.db')
-cur = db.cursor()
-
-
-#### Create table here:: 
-### Table: local_transport
-## Columns: id, year, month, date, location, distance_km, price_per_km, total_price
-cur.execute("""
-CREATE TABLE IF NOT EXISTS local_transport (
-    id INTEGER PRIMARY KEY,
-    year INTEGER NOT NULL,
-    month INTEGER NOT NULL,
-    date INTEGER NOT NULL,
-    location TEXT NOT NULL,
-    distance_km REAL NOT NULL,
-    price_per_km REAL NOT NULL,
-    total_price_euro REAL 
-)
-""")
-
-# id, year, month, date, invoice_value, VAT_presentage
-cur.execute("""
-CREATE TABLE IF NOT EXISTS phonebills (
-    id INTEGER PRIMARY KEY,
-    year INTEGER NOT NULL,
-    month INTEGER NOT NULL,
-    date INTEGER NOT NULL,
-    invoice_value REAL NOT NULL,
-    VAT_presentage REAL NOT NULL
-)
-""")
-
-
+""" 
 #### Insert colums if something missing: 
 ''' 
 cur.execute(""" ALTER TABLE local_transport
     ADD COLUMN month Integer """)
 '''
 
+"""
+""" 
 def insert_values():
     type_of_data=int(input("what data you want to add (Phone bills(enter 1), internal transport expenses (enter 2))"))
     input_method=int(input("How you prefer to enter data? (Manually(enter 1)/ With excel file (enter2): "))
@@ -99,12 +64,12 @@ def upload_csv_data(file_name):
     
 
 
-"""
+
 cur.execute('SELECT * from local_transport')
 rows = cur.fetchall()
 for row in rows:
-    print(row)
-"""
+    p
 db.commit()
 db.close()
 
+"""
