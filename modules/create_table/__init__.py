@@ -6,7 +6,7 @@ class cre_tab:
     cur = None
     db_file = None
    
-    
+    data_format1=[];
     #def __init__(self, db_file=":memory:"):
     def __init__(self, db_file):
         self.db_file=db_file
@@ -40,14 +40,26 @@ class cre_tab:
            
         
     def add_data(self, table_name,data_format):
+        
+        
+        """def number_to_string(argument):
+    match argument:
+        case 0:
+            return "zero"
+        case 1:
+            return "one"
+        case 2:
+            return "two"
+        case default:
+            return "something"
+        """
       ## This will define which data to which table and how.....   
         if table_name== "phonebills":
-            print(table_name)
             insert_sql=f""" INSERT INTO phonebills (year, month, date, invoice_value, VAT_presentage) VALUES (?,?,?,?,?)"""
+            data_format1=data_format
             self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4] ))
-            print(data_format[0])
-          #  (list_data[0],list_data[1],list_data[2],list_data[3],list_data[4] )) """
-                
+         
+          #  (list_data[0],list_data[1],list_data[2],list_data[3],list_data[4] )) """          
         elif table_name=="transport":
             insert_sql=f"""INSERT INTO local_transport (year, month, date, location, distance_km, price_per_km, total_price_euro) VALUES (?,?,?,?,?,?,?) """
             self.cur.execute(insert_sql, (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],data_format[5], int(data_format[5])*int(data_format[4]) ))
