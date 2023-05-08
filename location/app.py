@@ -25,7 +25,7 @@ from flask import Flask, request
 import googlemaps
 
 app = Flask(__name__)
-gmaps = googlemaps.Client(key='AIzaSyAvHrKFbATTJDhRqGqQrlYnmHp__UoGNHY')
+gmaps = googlemaps.Client(key='API_KEY')
 
 @app.route('/', methods=['GET', 'POST'])
 def distance():
