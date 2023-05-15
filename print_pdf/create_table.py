@@ -1,34 +1,33 @@
 import sqlite3
 
-
-db = sqlite3.connect('Inventory_and_price.db')
+#What is DB name??
+db_name='products.db'
+#What is your table name??
+table_name='inventory' 
+db = sqlite3.connect(db_name)
 cur = db.cursor()
+# id is the primary key for the table: 
+# you can change if necessary.
+# change Column_2 and rest according to your requiremenst
+# change data type accordingly (REAL ,TEXT, INTEGER)
+# if it shouln't be empty marked with 'NOT NULL' as below.
 
 cur.execute("""
-CREATE TABLE IF NOT EXISTS Inventory (
+CREATE TABLE IF NOT EXISTS {table_name} (
     id INTEGER PRIMARY KEY,
-    cost REAL NOT NULL,
-    product_id TEXT,
-    size TEXT,
-    quantitie INTEGER
-    color TEXT
-)
-""")
-#VAT, import/export tax, shipping cost, purchase price, other expenses,          
-cur.execute("""
-CREATE TABLE IF NOT EXISTS unit_price (
-    id INTEGER PRIMARY KEY,
-    P_id TEXT,
-    VAT REAL ,
-    custom_tax REAL,
-    shipping_cost REAL,
-    purchase_price REAL,
-    other_expenses REAL
-    
+    column_2 REAL NOT NULL,
+    column_3 TEXT,
+    column_4 TEXT,
+    column_5 INTEGER
+    column_6 TEXT
 )
 """)
 
-            
+db.commit()
+db.close()
+
+
+'''            
 cst=int(input("type cost"))
 cur.execute("")
 cur.execute("INSERT INTO Inventory (cost, product_id) VALUES (?,?)", (cst,'IB-',))
@@ -57,7 +56,6 @@ rows1 = cur.fetchall()
 
 for row1 in rows1:
     print(row1)
+'''
 
-db.commit()
-db.close()
 

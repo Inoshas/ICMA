@@ -77,11 +77,6 @@ CREATE TABLE IF NOT EXISTS importeditems (
 )
 """)
 
-''' 
-### if you want to add more colums to table use this
-cur.execute(""" ALTER TABLE [Tabl_name]
-    ADD COLUMN [column_name] INTEGER """)
-'''
 
 db.commit()
 db.close()

@@ -1,7 +1,5 @@
 import sqlite3
-#import csv
 
-#import openpyxl
 
 
 db = sqlite3.connect('db/products.db')
