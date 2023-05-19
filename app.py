@@ -1,5 +1,6 @@
 from flask import Flask,render_template, request
 from modules import insert_data
+from modules import show_data
 
 
 database_type=""
@@ -10,13 +11,7 @@ data_input=""
 
 
 app = Flask(__name__)
-""" 
-def read_db(database):
-    pass
 
-def read_table(database, table_name):
-    pass
-"""
 @app.route('/')
 def main_fun_html():
     return render_template('index.html')
@@ -71,12 +66,15 @@ def step_6():
         database_type=f"db/{database_type}";
         connec_db = insert_data.cre_tab(database_type)
         connec_db.add_table_val(method_data, table_need, data_ent)
+       # connect_db = show_data.Summary(database_type)
+        connec_db.summary_expe()
         return render_template('more_tasks.html', first=  database_type)
     
     elif confirm_status== "Restart": 
         return render_template('index.html')
        
+ 
    
-    
+   
 if __name__=="__main__":
     app.run(debug=True)

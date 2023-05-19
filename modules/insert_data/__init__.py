@@ -102,9 +102,24 @@ class cre_tab:
                             (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
                             data_format[5],data_format[6],data_format[7], data_format[8]))
         
-        self.commit()   
+        self.commit() 
+        #self.close()  
             
-
+    def summary_expe(self):
+        if self.db_file=="db/expenses.db":
+            insert_sql= f"""SELECT 
+        (SELECT SUM(c2.invoice_value) from capitalcost c2)  as tot_capita,
+        (Select SUM(p2.invoice_value) from phonebills p2 )as tot_phone,  
+        (select SUM(t2.total_price) from transport t2 ) as tot_trans,
+        (select SUM(i2.price_in_localcurency) from importeditems i2 )as tot_itempric,
+        (select SUM(i3.shiping_cost) from importeditems i3 )as tot_shipping,
+        (select SUM(i4.custom_duty) from importeditems i4 ) as tot_cusduty
+        FROM capitalcost c, phonebills p, transport t, importeditems i limit 1"""
+        
+     
+            self.cur.execute(insert_sql)
+            print("table selected")
+            self.commit()
    # id ,category, prod_id,  name , size,  color,  quantity,  damage_quantity , instock_quantity , sales_quantity ,
 
 
