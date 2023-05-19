@@ -1,7 +1,5 @@
 from flask import Flask,render_template, request
 from modules import insert_data
-from modules import show_data
-
 
 database_type=""
 method_d=""
