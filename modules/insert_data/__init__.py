@@ -98,9 +98,17 @@ class cre_tab:
             selling_price_defined ,actual_selling_price , status )
             VALUES (?,?,?,?,?,?,?,?,?)
             """
+            
+            self.cur.execute('SELECT MAX(id) FROM unitprice')
+            dummy_code_id = self.cur.fetchone()
+            dummy_prod_id= f'IB-{dummy_code_id[0]}'
+            print(dummy_prod_id)
+            
             self.cur.execute(insert_sql, 
-                            (data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
-                            data_format[5],data_format[6],data_format[7], data_format[8]))
+                            (dummy_prod_id,data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
+                            data_format[5],data_format[6],data_format[7]))
+            
+            #self.cur.execute("UPDATE unitprice SET product_id = product_id || id WHERE id = (SELECT MAX(id) FROM unitprice)")
         
         self.commit() 
         #self.close()  
