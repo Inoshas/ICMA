@@ -1,9 +1,9 @@
-# Inverntory and cost management application
-This project aims to develop a inventory and account management application for small businesses. Self-employed business entrepreneurs frequently struggle to come up with the cash needed for expenses such as inventory management, tax preparation, and bookkeeping. We want to develop a clear reporting and managing system that is simple to use. In this project we mainly maintain two databases (DB) with distinct tables. Those DBs are names as;
-#### Products DB 
-  This contains two tables.
-* Products: Contains product details and available quantities of each product.
-* Unit price: This include the marginal cost details. In the calculation, marginal price is calculated based on the total expenses. Then user can deside the selling price.
+# Inventory and cost management system
+A small business inventory and account management application is what this project wants to create. Entrepreneurs who work for themselves frequently struggle to find the money for costs like inventory control, tax preparation, and bookkeeping. We want to create a transparent, user-friendly reporting and management system. We primarily maintain two databases (DB) in this project, each with unique tables. The names of those DBs are: 
+#### Products Database 
+  There are two tables here.
+* Products: Lists each product's specifications and available stock levels.
+* Unit price: This includes information on marginal costs. Based on the overall expenses, the marginal price is computed in the computation. User can then choose the selling price.
 #### Expenses DB
 This contains four tables.
 * Phone bills : Company phone bill charges on monthly basis
@@ -11,6 +11,11 @@ This contains four tables.
 * Transport bills: Include local tranport cost
 * Imported item cost : Include all the imported item cost information including shipping and custome duty charges
 
+
+## This project has the following folders: 
+* Modules: There are two main Python modules in the modules subdirectory. The primary functions of the insert_data and create_table modules are the creation of new tables and columns, respectively. Users don't need to edit any of these unless they want to customize the tables, in which case we recommend using these modules.
+* db: This includes the two primary databases. If you want to see what's within, we recommend using DBeaver or another helpful viewer.
+* files: The user can manually upload data or utilize a CSV file to add new data to the database. The csv file must be placed in this folder, and any user-generated reports will be saved here as well.
 
 * ### How to use:
     * Doownload all the files.
