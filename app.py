@@ -64,9 +64,14 @@ def step_6():
         database_type=f"db/{database_type}";
         connec_db = insert_data.cre_tab(database_type)
         connec_db.add_table_val(method_data, table_need, data_ent)
-       # connect_db = show_data.Summary(database_type)
-        connec_db.summary_expe()
-        return render_template('more_tasks.html', first=  database_type)
+        #connec_db.summary_expe()
+        first=connec_db.summary_expe()
+        res = 0
+        for i in first:
+            res += i
+        return render_template('more_tasks.html', cs=  first[0], pb=first[1],
+                               lt=first[2],itc=first[3], sc=first[4], cd=first[5], 
+                             tot=res)
     
     elif confirm_status== "Restart": 
         return render_template('index.html')

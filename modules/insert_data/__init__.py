@@ -127,8 +127,10 @@ class cre_tab:
         
      
             self.cur.execute(insert_sql)
-            print("table selected")
+            dummy_results=self.cur.fetchall()
             self.commit()
+            return dummy_results[0]
+            
    # id ,category, prod_id,  name , size,  color,  quantity,  damage_quantity , instock_quantity , sales_quantity ,
 
 

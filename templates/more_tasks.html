@@ -8,6 +8,12 @@
     <title>Small Businesses Invernory and Account Management</title>
 </head>
 
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+
 <body>
     <main>
         <header>
@@ -32,7 +38,46 @@
             <input type="submit" value="Enter" name="status_n" id="optiony"/>
        </div>
     </form>
-        {{first}}
+</p>
+</p>
+    
+
+    <table style="width:100%">
+        <tr>
+          <th color="blue">Category</th>
+          <th color="blue">Price</th>
+        </tr>
+        <tr>
+          <td>Capital cost</td>
+          <td align="right">{{cs}}</td>
+        </tr>
+        <tr>
+            <td>Phone bills</td>
+            <td align="right">{{pb}}</td>
+        </tr><tr>
+            <td>Local transport</td>
+            <td align="right">{{lt}}</td>
+        </tr>
+        <tr>
+            <td>Import items cost</td>
+            <td align="right">{{itc}}</td>
+        </tr>
+        <tr>
+            <td>Shipping cost</td>
+            <td align="right">{{sc}}</td>
+        </tr>
+        <tr>
+            <td>Custom duty</td>
+            <td  align="right">{{cd}}</td>
+        </tr>
+        <tr>
+            <td font color="red">Total</td>
+            <td color="red" align="right">{{tot}}</td>
+        </tr>
+
+
+      </table>
+        
 
 </main>
 
