@@ -101,12 +101,13 @@ class cre_tab:
             
             self.cur.execute('SELECT MAX(id) FROM unitprice')
             dummy_code_id = self.cur.fetchone()
-            dummy_prod_id= f'IB-{dummy_code_id[0]}'
+            dummy_code_id='{:05}'.format(dummy_code_id[0]+1)
+            dummy_prod_id= f'IB-{dummy_code_id}'
             print(dummy_prod_id)
             
             self.cur.execute(insert_sql, 
-                            (dummy_prod_id,data_format[0],data_format[1],data_format[2],data_format[3],data_format[4],
-                            data_format[5],data_format[6],data_format[7]))
+                            (dummy_prod_id,data_format[0],data_format[1],data_format[2],data_format[3],
+                            data_format[2]*(data_format[3]+100)/(100),data_format[4], 0, "Available"))
             
             #self.cur.execute("UPDATE unitprice SET product_id = product_id || id WHERE id = (SELECT MAX(id) FROM unitprice)")
         

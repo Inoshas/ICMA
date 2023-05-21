@@ -37,7 +37,7 @@ def step_4():
     method_data=request.form.getlist('sel_f')[0]
    
     if method_data== "manually":
-        enter_name= "Enter data in the correct order with ',' seperation, type inside the square brackets [] "
+        enter_name= " Type inside the square brackets [] with comma (",") seperation in correct order"
     elif method_data== "file" :
         enter_name= "Enter csv file name "
     return render_template('data_enter.html',  ent_name=enter_name,  db_type=database_type, table=table_need, method_d=method_data)
