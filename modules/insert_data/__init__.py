@@ -107,7 +107,7 @@ class cre_tab:
             
             self.cur.execute(insert_sql, 
                             (dummy_prod_id,data_format[0],data_format[1],data_format[2],data_format[3],
-                            data_format[2]*(data_format[3]+100)/(100),data_format[4], 0, "Available"))
+                            (data_format[2]*(data_format[3]+100)/100 ),data_format[4], 0, "Available"))
             
             #self.cur.execute("UPDATE unitprice SET product_id = product_id || id WHERE id = (SELECT MAX(id) FROM unitprice)")
         

@@ -62,17 +62,24 @@ def step_6():
         method_data=request.form.getlist('method_d')[0]
         data_ent=request.form.getlist('data_f')[0]
         database_type=f"db/{database_type}";
-        connec_db = insert_data.cre_tab(database_type)
+        connec_db = insert_data.cre_tab('db/companydata.db')
         connec_db.add_table_val(method_data, table_need, data_ent)
-        #connec_db.summary_expe()
-        first=connec_db.summary_expe()
-        res = 0
-        for i in first:
-            res += i
-        return render_template('more_tasks.html', cs=  first[0], pb=first[1],
-                               lt=first[2],itc=first[3], sc=first[4], cd=first[5], 
-                             tot=res)
-    
+        
+        """
+        if database_type=="expenses.db":
+            first=connec_db.summary_expe()
+            res = 0
+            for i in first:
+                res += i
+            return render_template('more_tasks.html', cs=  first[0], pb=first[1],
+                                lt=first[2],itc=first[3], sc=first[4], cd=first[5], 
+                                tot=res)
+        """
+        
+        return render_template('more_tasks.html', cs=  "check", pb="check",
+                                lt="check",itc="check", sc="check", cd="check", 
+                                tot="check")
+        
     elif confirm_status== "Restart": 
         return render_template('index.html')
        
