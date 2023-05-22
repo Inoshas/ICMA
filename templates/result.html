@@ -1,0 +1,18 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Distance Result</h1>
+    {% if distance %}
+        <p>Distance: {{ distance }}</p>
+        <form action="/invoice" method="post">
+            <button type="submit">Print</button>
+        </form>
+    {% else %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>

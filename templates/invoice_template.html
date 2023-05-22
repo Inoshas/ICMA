@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .invoice-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .invoice-info p {
+            margin: 0;
+        }
+
+        .invoice-info span {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .invoice-details {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .invoice-details div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .invoice-details div p {
+            margin: 0;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .total {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .total p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .total span {
+            margin-left: 5px;
+        }
+
+        .print-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .print-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Shop Logo">
+            </div>
+            <div class="invoice-info">
+                <p>Invoice #: {{ invoice_number }}</p>
+                <p>Date: {{ date }}</p>
+            </div>
+        </div>
+
+        <div class="invoice-details">
+            <div>
+                <p>Shop Name: {{ shop_name }}</p>
+            </div>
+            <div>
+                <p>Origin: {{ origin }}</p>
+                <p>Destination: {{ destination }}</p>
+                <p>Distance: {{ distance }}</p>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.unit_price }}</td>
+                        <td>{{ item.amount }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="total">
+            <p>Total:</p>
+            <span>{{ total }}</span>
+        </div>
+
+        <div class="print-button">
+            <button onclick="window.print()">Print</button>
+        </div>
+    </div>
+</body>
+</html>
