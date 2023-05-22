@@ -2,7 +2,7 @@
 A small business inventory and account management application is what this project wants to create. Entrepreneurs who work for themselves frequently struggle to find the money for costs like inventory control, tax preparation, and bookkeeping. We want to create a transparent, user-friendly reporting and management system. We primarily maintain two databases (DB) in this project, each with unique tables. The names of those DBs are: 
 #### Products Database 
   This contains two tables.
-* Products: Lists each product's specifications and available stock levels.
+* Products: Lists each products' specifications and available stock levels.
 * Unit price: This includes information on marginal costs. Based on the overall expenses, the marginal price is computed in the computation. User can then choose the selling price.
 #### Expenses DB
 This contains four tables.
